@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="@color/colorLightGray"
+    tools:context=".ui.views.UserDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_8dp">
+
+        <ImageView
+            android:id="@+id/iv_main"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:scaleType="centerInside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_follower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follower: 0"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_following"
+            app:layout_constraintTop_toBottomOf="@+id/iv_main" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Following: 0"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_follower"
+            app:layout_constraintLeft_toRightOf="@+id/tv_follower"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_4dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_follower">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_8dp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:text="Name:"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:text="Company:"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <TextView
+                    android:id="@+id/tv_blog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:text="Blog:"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_company"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_company" />
+
+                <TextView
+                    android:id="@+id/tv_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:text="Url:"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_blog"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_blog" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@string/notes"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/cv_details"
+            app:layout_constraintTop_toBottomOf="@+id/cv_details" />
+
+        <EditText
+            android:id="@+id/et_notes"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:hint="@string/note"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/margin_8dp"
+            android:background="@drawable/border"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_notes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notes" />
+
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toLeftOf="@+id/et_notes"
+            app:layout_constraintRight_toRightOf="@+id/et_notes"
+            app:layout_constraintTop_toBottomOf="@+id/et_notes" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

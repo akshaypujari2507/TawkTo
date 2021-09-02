@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TawkTo</string>
+
+    <string name="noRecords">No Records Found!</string>
+    <string name="search_by_name">Search by Name</string>
+    <string name="notes">Notes:</string>
+    <string name="note">Note</string>
+    <string name="save">Save</string>
+    <string name="search">Search by name</string>
+
+</resources>

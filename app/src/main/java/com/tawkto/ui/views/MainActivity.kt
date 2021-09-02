@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity(), OnUserClicked {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
                 mAdapter.filter.filter(charSequence.toString())
+                shimmerFrameLayout.visibility = View.GONE
             }
 
             override fun afterTextChanged(editable: Editable) {}
